@@ -63,6 +63,7 @@ class Student(models.Model):
                                 blank=True)
     group = models.ForeignKey(StudentGroup,verbose_name="Группа",
                                 on_delete=models.SET_NULL,
+                                related_name="students",
                                 null=True,
                                 blank=True )
     

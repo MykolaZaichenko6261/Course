@@ -19,12 +19,14 @@ class StudentLearnSubject(View):#Решить вопрос с id
     def get(self, request,id):
         
         try:
-            pr=id[4:len(id)-1]
-            subjects=Subject.objects.get(id=pr)
+            
+            
+            subjects=Subject.objects.get(id=id)
             group_name=StudentGroup.objects.filter(subject=subjects)
             student_names=[] 
             for groups in group_name:
                 stud=Student.objects.filter(group=groups)
+                
                 for student in stud:
                     student_names.append(student)
                 
